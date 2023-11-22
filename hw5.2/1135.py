@@ -4,9 +4,11 @@ while len(s) < n:
     s = s + input()
 
 c = 0
+left = 0
 
 for i in range(n):
     if s[i] == '<':
-        c += s[0:i].count('>')
+        c += len(s[:i]) - left
+        left += 1
 
 print(c)
